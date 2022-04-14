@@ -863,7 +863,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "NEVEZZ_AT"
+			"value" : "GRAFHF1"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1302,6 +1302,42 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "GRAFHF1_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/User/CLionProjects/GrafikaHF1/cmake-build-debug"
+		},
+		{
+			"name" : "GRAFHF1_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "GRAFHF1_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/User/CLionProjects/GrafikaHF1"
+		},
+		{
 			"name" : "GrafikaHF1_BINARY_DIR",
 			"properties" : 
 			[
@@ -1348,6 +1384,42 @@
 			],
 			"type" : "BOOL",
 			"value" : "OFF"
+		},
+		{
+			"name" : "Molecule_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/User/CLionProjects/GrafikaHF1/cmake-build-debug"
+		},
+		{
+			"name" : "Molecule_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "Molecule_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/User/CLionProjects/GrafikaHF1"
 		},
 		{
 			"name" : "NEVEZZ_AT_BINARY_DIR",

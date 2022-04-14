@@ -86,7 +86,7 @@ unsigned int vao;	   // virtual world on the GPU
 
 const float mH = 1.67E-27; // kg
 const float cE = 1.6E-19;  // c
-const float k = 9E9;      // Nm^2/c^2
+const float k = 9E9 ;      // Nm^2/c^2
 const float vW = 1.0E-3;     // N*s/m
 const float distC = 1E-9;   // m
 const float cFC = -0.0138;//-3.45; //
@@ -400,16 +400,25 @@ float calcTorque(vec2 v, vec2 F) {
     vec3 res =  cross(v*distC,F);
     return res.z;
 }
+vec2 getParallel(vec2 v1, vec2 v2) {
+
+}
+
+vec2 getPerpendicular(vec2 v1, vec2 v2) {
+
+}
 void Physics(float dT) {
     std::vector<vec2> dV = std::vector<vec2>();
     std::vector<float> dO = std::vector<float>();
     for(int i = 0; i < mols.size(); i++) {
-        vec2 sumForce = vec2(0,0);
+        vec2 sumForceMove = vec2(0,0);
+        vec2 sumForceRot = vec2(0,0);
         float sumTorque = 0;
         Molecule mol = *mols[i];
         for(int j = 0; j < mol.atoms.size(); j++) {
             Atom a = *mol.atoms[j];
-
+            vec2 sumForce = vec2(0,0);
+            float sumTorque = 0;
             //printf("airrse!!!!");
             for(int k = 0; k < mols.size(); k++) {
                 if(i==k) {
@@ -426,11 +435,14 @@ void Physics(float dT) {
                     }
                 }
             }
-            sumForce = sumForce + calcAirResistance(a, mol.vel, mol.aVel, mol.relPos(a));
-            sumTorque = sumTorque + calcTorque(mol.relPos(a),sumForce);
+            sumForce = sumForce + calcAirResistance(a, mol.vel, mol.aVel, mol.relPos(a));   //TODO calc moving and rotating parts of force
+            //sumForceMove += sumForce mozgató
+            //sumTorque = sumTorque forgató + atom pozi;
             //printf("%f\n", sumTorque);
         }
-        dV.push_back(sumForce/(mH*mol.mass)*dT);
+
+        dV.push_back(sumForceMove/(mH*mol.mass)*dT);
+        dO.push_back(sumTorque/(mH*mol.MOI)*dT);
         dO.push_back(sumTorque/(mH*mol.MOI)*dT);
         printf("%f F\n", dO.back());
     }
